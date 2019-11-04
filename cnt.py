@@ -13,6 +13,10 @@
 # the new format of:
 # 9.25
 
+# TODO:
+# Data has some variability. Can be in the form 10.5 or 10 1/2. 
+# create a function to clean that up such that all data is in the form 10.5
+
 
 import pandas as pd
 import glob
