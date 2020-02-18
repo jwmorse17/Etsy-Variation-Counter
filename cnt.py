@@ -33,6 +33,7 @@ for filename in allFiles:
 frame = pd.concat(list, axis=0, ignore_index=True)
 
 
-frame['var_cl'] = frame['Variations'].str.split('US').str[0] 
-frame['var_cl'] = frame['var_cl'].str.split(':').str[1]
-print(frame['var_cl'].value_counts())
+frame['var_cl'] = frame['Variations'].str.split('US').str[0].str.split(':').str[1]
+frame['clean'] = frame['var_cl'].str.replace(' 1/4', '.25').str.replace(' 1/2', '.5').str.replace( ' 3/4', '.75')
+
+print(frame['clean'].value_counts())
